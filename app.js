@@ -8,7 +8,7 @@ var flash = require('connect-flash');
 var bluebird = require('bluebird');
 var mongodb = bluebird.promisifyAll(require('mongoose'));
 const connection_url = process.env.MONGODB_URL || 'mongodb://localhost/Centers';
-const connection_port = process.env.PORT ||3000;
+const connection_port = process.env.PORT || 3000;
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
@@ -19,7 +19,7 @@ var session = require('express-session');
 var app = express();
 
 // view engine setup
-
+app.set('port', (process.env.PORT || 3000));
 app.engine(".hbs", code({ defaultLayout: "layout", extname: ".hbs" }));
 app.set("view engine", ".hbs");
 
@@ -76,7 +76,7 @@ app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render("error");
 });
-app.listen(connection_port,()=>{
+app.listen(app.get('port'), () => {
     console.log('Server Is Running')
 })
 module.exports = app;
