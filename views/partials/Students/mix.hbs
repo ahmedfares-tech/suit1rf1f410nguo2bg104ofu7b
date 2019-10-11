@@ -1,0 +1,39 @@
+<p>TOTAL STUDENTS {{count}}</p>
+<p>TOTAL Money {{money}}</p>
+
+<form action="/mix" method="get">
+    <table class="table table-bordered" style="padding:1%">
+        <thead>
+            <tr>
+                <th scope="col">Student ID</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Student Number</th>
+                <th scope="col">parents number</th>
+                <th scope="col">Teacher Name</th>
+                <th scope="col">Course Name</th>
+                <th scope="col">Course Day</th>
+                <th scope="col">Course Time</th>
+                <th scope="col">Course Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <td>{{this.StudentID}}</td>
+                <td>{{this.StudentName}}</td>
+                <td>{{this.StudentNumber}}</td>
+                <td>{{this.ParentsNumber}}</td>
+                <td>{{this.TeacherName}}</td>
+                <td>{{this.courseName}}</td>
+                <td>{{this.courseDay}}</td>
+               
+                <td>{{this.courseTime}}</td>
+                <td>{{this.courseCost}}</td>
+
+
+            </tr>
+
+            {{/each}}
+        </tbody>
+    </table>
+</form>

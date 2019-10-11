@@ -1,0 +1,32 @@
+<div class="form-group" hidden>
+
+    <div class="input-group">
+
+        <input type="text" class="form-control" placeholder="Search By ID or Name" name="ajaxteacherl" id="ajaxteacherl">
+
+    </div>
+</div>
+<form action="/ListTeachers" method="get">
+    <table class="table table-bordered" style="padding:1%">
+        <thead>
+            <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Teacher Name</th>
+                <th scope="col">Teacher Number</th>
+                <th scope="col">Teacher Course</th>
+                <th scope="col">Data</th>
+            </tr>
+        </thead>
+        <tbody id="teachtb">
+            {{#each Teachers}}
+            <tr>
+                <td>{{this.TeacherID}}</td>
+                <td>{{this.TeacherName}}</td>
+                <td>{{this.TeacherNumber}}</td>
+                <td>{{this.TeacherCourse}}</td>
+                <td> <button type="submit" class="btn btn-info" formaction="/ListTeachersCourse/{{this.TeacherID}}">Info</button></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</form>

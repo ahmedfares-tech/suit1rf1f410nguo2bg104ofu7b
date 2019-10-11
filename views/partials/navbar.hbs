@@ -1,0 +1,64 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark py-3 bg-dark" {{login}}>
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#">Center Mangment</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto my-2 my-lg-0 text-white">
+                <li class="nav-item">
+                    <a class="nav-link {{home}}" href="/home"><i class="fas fa-home"></i> Home</a>
+                </li>
+
+                <li class="nav-item dropdown {{student}}">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user-graduate"></i>
+                        Students
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/student"><i class="far fa-registered"></i> Students
+                            Registeration</a>
+                        <a class="dropdown-item" href="/studentcourse"><i class="fas fa-copyright"></i> Students Courses
+                            Registeration</a>
+                        <a class="dropdown-item" href="/studentL"><i class="fas fa-list-alt"></i> Students List</a>
+                        <a class="dropdown-item" href="/USI"><i class="fas fa-pen-square"></i> Students Update</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown {{teacher}}">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Teacher
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/teacher"><i class="fas fa-registered"></i> Teacher
+                            Registeration</a>
+                        <a class="dropdown-item" href="/teachercourse"><i class="fas fa-copyright"></i> Teacher Courses
+                            Registeration</a>
+                        <a class="dropdown-item" href="/TeachersL"><i class="fas fa-list-alt"></i> Teachers List</a>
+                        <a class="dropdown-item" href="/UTI"><i class="fas fa-pen-square"></i> Teachers Update</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown {{Active}}">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i>
+                        User
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/status"><i class="far fa-chart-bar"></i> Statistics</a>
+                        <a class="dropdown-item" href="/admin"><i class="fas fa-key"></i> Change Password</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>

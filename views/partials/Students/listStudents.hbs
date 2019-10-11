@@ -1,0 +1,39 @@
+<div class="form-group" hidden>
+
+    <div class="input-group">
+
+        <input type="text" class="form-control" placeholder="Search By ID or Name" name="ajaxstudentl" id="ajaxstudentl">
+
+    </div>
+</div>
+<form action="/studentl" method="get">
+    <table class="table table-bordered" style="padding:1%">
+        <thead>
+            <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Student Number</th>
+                <th scope="col">Parents Number</th>
+                <th scope="col">Whatsapp Number</th>
+                <th scope="col">School Name</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Data</th>
+            </tr>
+        </thead>
+        <tbody id="studentltb">
+            {{#each Student}}
+            <tr>
+                <td>{{this.Studentid}}</td>
+                <td>{{this.StudentName}}</td>
+                <td>{{this.Phones.studentphone}}</td>
+                <td>{{this.Phones.parentsphone}}</td>
+                <td>{{this.Phones.whatsappphone}}</td>
+                <td>{{this.AnotherData.SchoolName}}</td>
+                <td>{{this.REGcost}}</td>
+                <td> <button type="submit" class="btn btn-info"
+                        formaction="/ListStudentCourse/{{this.Studentid}}">Info</button></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</form>

@@ -1,0 +1,109 @@
+{{flash}}
+<div class="row">
+    <div class="col">
+        <div class="form-group" id="Course Code">
+            <label>CourseCode</label>
+            <select class="custom-select" name="cocochan" id="cocochan">
+                <option>Choose By Course Code:</option>
+                {{#each coco}}
+                <option>{{this}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <script>
+
+        </script>
+    </div>
+    <div class="col">
+        <div class="form-group" id="Course Date">
+            <label>Course Date</label>
+
+            <input type="text" class="form-control" placeholder="dd/mm/yyyy" name="date" id="date">
+            {{!-- <input type="text" name="datepicker" id="datepicker" /> --}}
+            {{!-- <input id="datepicker" name="cdchan" readonly />
+            <script>
+
+            </script> --}}
+            {{!-- <div class="input-group date">
+                <input type="text" class="form-control" value="12-02-2012">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div>
+             <input type="date" name="bday" max="3000-12-31" min="1000-01-01" class="form-control"> --}}
+
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-group" id="Attend">
+            <label>Attend</label>
+            <select class="custom-select" name="atchan" id="atchan">
+                <option>all</option>
+                <option>true</option>
+                <option>false</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col" hidden>
+        <div class="input-group">
+
+            <input type="text" class="form-control" placeholder="Search By ID or Name" name="testnewcollect"
+                id="testnewcollect">
+
+        </div>
+    </div>
+
+
+    <div class="col">
+
+
+        <table class="table table-bordered" id="tbtable">
+            <thead id="tbhead">
+                <tr>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Course Code</th>
+                    <th scope="col">attenddate</th>
+
+                    <th scope="col">Attended</th>
+                    <th scope="col">center cost</th>
+                    <th scope="col">teachercost</th>
+                    <th scope="col">total cost</th>
+                </tr>
+            </thead>
+            <tbody id="testingtb">
+                {{#each data}}
+                <tr id="dongoaway">
+                    <td> {{this.StudentNam}}</td>
+                    <td> {{this.CourseCode}}</td>   
+                    <td> {{this.attenddate}}</td>
+
+                    <td id="attendval"> {{this.AttendChange}}</td>
+                    <td> {{this.coursepaid}}</td>
+                    <td> {{this.CenterCost}}</td>
+                    <td> {{this.TeacherCost}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+            <tfoot id="final">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>   
+                    <td></td>
+                    <td id="totalcost"></td>
+                    <td id="centercost"></td>
+                    <td id="teachercost"></td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+
+    <div class="col" hidden>
+        <h1>This Is Total Cost: {{total}}</h1>
+        <h1>This Is Teacher Cost: {{teacher}}</h1>
+        <h1>This Is Center Cost: {{center}}</h1>
+    </div>
+</div>

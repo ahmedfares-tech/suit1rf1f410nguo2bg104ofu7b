@@ -1,0 +1,109 @@
+<div class="row" style="width:100%">
+    <div class="col" id="UTeacherInfo">
+        {{#if message}}
+        <div class="alert alert-{{message.type}}" style="text-align: center">
+            <strong>{{message.intro}}</strong> {{message.message}}
+        </div>
+        {{/if}}
+                {{#if done}}
+        <div class="alert alert-{{done.type}}" style="text-align: center">
+            <strong>{{done.intro}}</strong> {{done.message}}
+        </div>
+        {{/if}}
+        <label>Teacher Info</label>
+        <form action="/UTeacherinfo" method="post">
+            <div class="form-group">
+                <label>Teacher ID</label>
+                <input type="text" class="form-control" placeholder="ID..." name="UTeachID">
+            </div>
+            <div class="form-group">
+                <label>Teacher Number</label>
+                <input type="text" class="form-control" placeholder="EX: 01000000" name="UTeachNum">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-dark">Update</button>
+            </div>
+        </form>
+
+    </div>
+    <div class="col" id="UTCourse">
+        {{#if message1}}
+        <div class="alert alert-{{message1.type}}" style="text-align: center">
+            <strong>{{message1.intro}}</strong> {{message1.message}}
+        </div>
+        {{/if}}
+        <label>Teacher Course</label>
+        <form action="/UTeachercourse" method="post">
+            <div class="form-group">
+                <label>Teacher ID</label>
+                <input type="text" class="form-control" placeholder="ID..." name="UTeachIDC" id="UTeachIDC">
+            </div>
+            <div class="form-group" id="Course code">
+                <label>Course Cod</label>
+                <select class="custom-select" name="Ucode" id="Ucode">
+                    <option>Choose Course</option>
+                </select>
+            </div>
+            <div class="form-group" id="Course Day">
+                <label>Course Day</label>
+                <select class="custom-select" name="UDay" id="UDay">
+                    <option>choose Day</option>
+                    <option>Sunday</option>
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col"> <label for="Getting money">Houres</label>
+                        <input type="text" class="form-control" placeholder="Houres: 01" name="UTH" id="UTH">
+                    </div>
+                    <div class="col"> <label for="Getting money">Minutes</label>
+                        <input type="text" class="form-control" placeholder="Minutes: 25" name="UTM" id="UTM">
+                    </div>
+                    <div class="col"> <label for="Getting money">M</label>
+                        <div class="col"> <select class="custom-select" name="UTAP" id="UTAP">
+                                <option>AM</option>
+                                <option>PM</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" id="Course Cost">
+                <label>Course Cost</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Ex: 120" name="UTotalCost" id="totc">
+                    <div class="input-group-append">
+                        <span class="input-group-text">L.E</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" id="Teacher Cost">
+                <label>Teacher Cost</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Ex: 120" name="UTeacherCost" id="techc">
+                    <div class="input-group-append">
+                        <span class="input-group-text">L.E</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" id="Center Cost">
+                <label>Center Cost</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Ex: 120" name="UCenterCost" id="centc">
+                    <div class="input-group-append">
+                        <span class="input-group-text">L.E</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-dark">Update</button>
+            </div>
+        </form>
+    </div>
+</div>

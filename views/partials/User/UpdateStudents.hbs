@@ -1,0 +1,106 @@
+<div class="row" style="width:100%">
+    <div class="col" id="UStudentInfo">
+            
+        {{#if message}}
+        <div class="alert alert-{{message.type}}" style="text-align: center">
+            <strong>{{message.intro}}</strong> {{message.message}}
+        </div>
+        {{/if}}
+        <div id="Sinfoalert">
+
+        </div>
+        <label>Student Info</label>
+        <form action="/UStudentinfo" method="post">
+            <div class="form-group" id="USID">
+                <label>StudentID</label>
+                <input type="text" class="form-control" placeholder="ID..." name="UStudentIDin" id="UStudentIDin">
+            </div>
+            <div class="form-group" id="Name">
+                <label>Full Name</label>
+                <input type="text" class="form-control" placeholder="Full Name: Ahmed Fares" name="UStudentName"
+                    id="UStudentName">
+            </div>
+            <div class="form-group" id="Studentphone">
+                <label>Student Phone</label>
+                <input type="text" class="form-control" placeholder="Ex: 010000000" name="UStudentNumber"
+                    id="UStudentNumber">
+            </div>
+            <div class="form-group" id="ParentsPhone">
+                <label>Parents Phone</label>
+                <input type="text" class="form-control" placeholder="Ex: 010000000" name="UStudentParentsPhone"
+                    id="UStudentParentsPhone">
+            </div>
+            <div class="form-group" id="WhatsappPhone">
+                <label>Whatsapp Phone</label>
+                <input type="text" class="form-control" placeholder="Ex: 010000000" name="UStudentWhatsappPhone"
+                    id="UStudentWhatsappPhone">
+            </div>
+
+
+            <div class="form-group" id="RegisterationAmount">
+                <label>Paid Registeration</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Ex: 120" name="UStudentRegisterationAmount"
+                        id="UStudentRegisterationAmount">
+                    <div class="input-group-append">
+                        <span class="input-group-text">L.E</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" id="SubmitButton">
+                <button type="submit" class="btn btn-dark">Update</button>
+            </div>
+        </form>
+    </div>
+    <div class="col" id="UStudentCourseData">
+                {{#if message1}}
+        <div class="alert alert-{{message1.type}}" style="text-align: center">
+            <strong>{{message1.intro}}</strong> {{message1.message}}
+        </div>
+        {{/if}}
+                {{#if done}}
+        <div class="alert alert-{{done.type}}" style="text-align: center">
+            <strong>{{done.intro}}</strong> {{done.message}}
+        </div>
+        {{/if}}
+        <div id="SDalert">
+
+        </div>
+        <label>Student Course</label>
+        <form action="/UStudentcourse" method="post">
+            <div class="form-group" id="USID">
+                <label>StudentID</label>
+                <input type="text" class="form-control" placeholder="ID..." name="UStudentID" id="UStudentID">
+            </div>
+            <div class="form-group" id="CurrentCourseCode">
+                <label>From Course:</label>
+                <select class="custom-select" name="UCCourseCode" id="UCCourseCode">
+                    <option>Choose Current Course:</option>
+                </select>
+            </div>
+            <div class="form-group" id="CurrentCourseData">
+
+            </div>
+            <div class="form-group" id="Teacheme">
+                <label>Teacher Name:</label>
+                <select class="custom-select" name="UTeacher" id="UTeacher">
+                    <option>Choose Teacher Name:</option>
+                </select>
+            </div>
+            <div class="form-group" id="NewCourseCode">
+                <label>To Course:</label>
+                <select class="custom-select" name="UNCourseCode" id="UNCourseCode">
+                    <option>Choose New Course Code:</option>
+                </select>
+            </div>
+            <div class="form-group" id="NewCourseData">
+
+            </div>
+            <div class="form-group" id="Submitutton">
+                <button type="submit" class="btn btn-dark">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+

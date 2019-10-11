@@ -1,0 +1,40 @@
+<script type="text/javascript">
+    function convert() {
+        var str;
+        var srch = document.getElementById("Grade");
+        str = srch.value;
+        //srch.value = str.capitalize();
+        srch.value = str.toLowerCase();
+    }
+</script>
+        {{#if done}}
+        <div class="alert alert-{{done.type}}" style="text-align: center">
+            <strong>{{done.intro}}</strong> {{done.message}}
+        </div>
+        {{/if}}
+<form action="/addgrade" method="post" style="padding:1%">
+    <div class="form-group">
+        <label>Grade</label>
+        <input type="text" class="form-control" placeholder="Write Here" name="GGrade" id="Grade">
+    </div>
+    <button type="submit" class="btn btn-dark" onclick="convert()">Add Grade</button>
+</form>
+<br>
+<form action="/grades" method="get">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#ID</th>
+                <th scope="col">Grade Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <th scope="row">{{this.GradeCounter}}</th>
+                <td>{{this.GradeLevel}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</form>

@@ -1,0 +1,52 @@
+<div class="form-group" hidden>
+
+    <div class="input-group">
+
+        <input type="text" class="form-control" placeholder="Search By ID or Name" name="ajaxteachcol" id="ajaxteachcol">
+
+    </div>
+</div>
+<form action="/ListTeachers" method="get">
+    <table class="table table-bordered" style="padding:1%">
+        <thead>
+            <tr>
+                <th scope="col">Course Code</th>
+                <th scope="col">Course Grade</th>
+                <th scope="col">Course Day</th>
+                <th scope="col">Course Time</th>
+                <th scope="col">Teacher Cost</th>
+                <th scope="col">Center Cost</th>
+                <th scope="col">Total Cost</th>
+                <th scope="col">List Student</th>
+            </tr>
+        </thead>
+        <tbody id="teacherscourse">
+            {{#each TeachersCourses}}
+            
+            <tr>
+                <td>{{this.CourseCode}}</td>
+                <td>{{this.CourseGrade}}</td>
+                <td>{{this.CourseDay}}</td>
+
+              <td>{{this.CourseTime}}</td>
+
+                <td>{{this.TeacherCost}}</td>
+                <td>{{this.CenterCost}}</td>
+                <form action="" method="get">
+                    <td>{{this.TotalCost}}</td>
+                </form>
+
+                <td>
+                    <form action="/testing" method="post">
+                    <input type="hidden" name="coursecode" value="{{this.CourseCode}}">
+                    <input type="hidden" name="Teachername" value="{{this.TeacherName}}">
+                    <input type="hidden" name="coureseday" value="{{this.CourseDay}}">
+                    <input type="hidden" name="coursegrade" value="{{this.CourseGrade}}">
+                        <button type="submit" class="btn btn-info">LIST</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</form>

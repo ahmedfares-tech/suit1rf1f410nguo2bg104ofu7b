@@ -1,0 +1,39 @@
+{{#if message}}
+<div class="alert alert-{{message.type}}" style="text-align: center">
+    <strong>{{message.intro}}</strong> {{message.message}}
+</div>
+{{/if}}
+<div class="form-group" hidden>
+
+    <div class="input-group">
+
+        <input type="text" class="form-control" placeholder="Search By ID or Name" name="ajaxstuteachl"
+            id="ajaxstuteachl">
+
+    </div>
+</div>
+<table class="table table-bordered" style="padding:1%">
+    <thead>
+        <tr>
+            <th scope="col">Student ID</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Course Grade</th>
+            <th scope="col">Student Number</th>
+            <th scope="col">Parents Number</th>
+            <th scope="col">Course Cost</th>
+        </tr>
+    </thead>
+    <tbody id="stcoli">
+        {{#each data}}
+        <tr>
+            <td>{{this.StudentID}}</td>
+            <td>{{this.StudentName}}</td>
+            <td>{{this.coursegrade}}</td>
+            <td>{{this.StudentNumber}}</td>
+            <td>{{this.ParentsNumber}}</td>
+            <td>{{this.courseCost}}</td>
+
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

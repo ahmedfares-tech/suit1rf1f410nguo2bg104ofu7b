@@ -1,0 +1,55 @@
+<p id="today" name="today"></p>
+
+
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Course Code</th>
+                    <th scope="col">Teacher ID</th>
+                    <th scope="col">Teacher Name</th>
+                    <th scope="col">Teacher Number</th>
+                    <th scope="col">Course Name</th>
+                    <th scope="col">Course Day</th>
+                    <th scope="col">Course Grade</th>
+                    <th scope="col">Course Time</th>
+                    <th scope="col">Teacher Cost</th>
+                    <th scope="col">Center Cost</th>
+                    <th scope="col">Total Cost</th>
+                    <th scope="col">List Student</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <td>{{this.CourseCode}}</td>
+                    <td>{{this.TeacherID}}</td>
+                    <td>{{this.TeacherName}}</td>
+                    <td>0{{this.TeacherNumber}}</td>
+                    <td>{{this.CourseName}}</td>
+                    <td>{{this.CourseDay}}</td>
+                    <td>{{this.CourseGrade}}</td>
+                    <td>{{this.CourseTime}}</td>
+                    <form action="" method="get">
+                        <td>{{this.TeacherCost}}</td>
+                        <td>{{this.CenterCost}}</td>
+                        <td>{{this.TotalCost}}</td>
+                    </form>
+                    <form action="/attend" method="post">
+                        <input type="hidden" name="TeacherNameQ" value="{{this.TeacherName}}">
+                        <input type="hidden" name="CourseNameQ" value="{{this.CourseName}}">
+                        <input type="hidden" name="CourseDayQ" value="{{this.CourseDay}}">
+                        <input type="hidden" name="CourseGradeQ" value="{{this.CourseGrade}}">
+                        <input type="hidden" name="CourseTimeQ" value="{{this.CourseTime}}">
+                        <input type="hidden" name="TotalCost" value="{{this.TotalCost}}">
+                        <input type="hidden" name="CourseCode" value="{{this.CourseCode}}">
+                        <input type="hidden" name="TeacherCost" value="{{this.TeacherCost}}">
+                        <input type="hidden" name="CenterCost" value="{{this.CenterCost}}">
+                        <td> <button type="submit" class="btn btn-info">Info</button></td>
+                    </form>
+
+                </tr>
+
+                {{/each}}
+            </tbody>
+        </table>

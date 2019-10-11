@@ -1,0 +1,69 @@
+<div class="form-group text-center pl-4 fade show" style="width:99%">
+    <div class="col" id="Students Courses">
+        {{#if message}}
+        <div class="alert alert-{{message.type}}" style="text-align: center">
+            <strong>{{message.intro}}</strong> {{message.message}}
+        </div>
+        {{/if}}
+        {{#if done}}
+        <div class="alert alert-{{done.type}}" style="text-align: center">
+            <strong>{{done.intro}}</strong> {{done.message}}
+        </div>
+        {{/if}}
+        <form action="/StudentCoursesREG" method="post" class="needs-validation">
+            <div class="form-group animated flash delay-3s" id="checkidstud">
+
+            </div>
+
+            <div class="form-group" id="Student ID">
+                <label>ID of student</label>
+                <input type="number" min="0" class="form-control" placeholder="ID" name="StudentIDVal"
+                    id="studentidcourse" required>
+            </div>
+
+            <div class="form-group" id="CourseNamesec">
+                <label>Course Name</label>
+                <select class="custom-select" name="CourseName" id="StudentCourseName" required>
+                    <option>Choose Course Name</option>
+                    {{#each courses}}
+                    <option>{{this}}</option>
+                    {{/each}}
+
+
+                </select>
+            </div>
+            <div class="form-group" id="TeacherNamediv">
+                <label>Teacher Name</label>
+                <select class="custom-select" name="TeacherName" id="TeacherName" required>
+                </select>
+            </div>
+
+            <div class="form-group" id="CourseGradeDIV">
+                <label>Course Grade</label>
+                <select class="custom-select" name="CourseGRADE_add" id="CourseGRADE_add" required>
+
+                </select>
+            </div>
+
+            <div class="form-group" id="CourseDay">
+                <label>Course Day</label>
+                <select class="custom-select" name="Day" id="coda" required>
+                </select>
+            </div>
+
+            <div class="form-group" id="CourseTimeDIV">
+                <label for="School">course Time:</label>
+                <select class="custom-select" name="time" id="CourseTime" required>
+
+                </select>
+            </div>
+            <div class="form-group" id="CourseCost">
+
+            </div>
+            <div class="form-group mt-2" id="ButtonAddCourse">
+
+            </div>
+
+        </form>
+    </div>
+</div>

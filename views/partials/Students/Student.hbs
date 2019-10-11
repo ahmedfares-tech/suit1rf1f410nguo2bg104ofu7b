@@ -1,0 +1,65 @@
+<div class="form-group text-center pl-4" style="width:99%">
+    <div class="col" id="Student Registeration">
+        {{#if message}}
+        <div class="alert alert-{{message.type}}" style="text-align: center">
+            <strong>{{message.intro}}</strong> {{message.message}}
+        </div>
+        {{/if}}
+        {{#if done}}
+        <div class="alert alert-{{done.type}}" style="text-align: center">
+            <strong>{{done.intro}}</strong> {{done.message}}
+        </div>
+        {{/if}}
+        <form action="/studentREG" method="post">
+            <div class="form-group" id="Name" class="needs-validation">
+                <label>Full Name</label>
+                <input type="text" class="form-control" placeholder="Full Name: Ahmed Fares" name="StudentName"
+                    id="StudentName" required>
+            </div>
+            <div class="form-group" id="Student phone">
+                <label>Student Phone</label>
+                <input type="number" min="0" class="form-control" placeholder="Ex: 010000000" name="StudentNumber"
+                    id="StudentNumber" required>
+            </div>
+            <div class="form-group" id="Parents Phone">
+                <label>Parents Phone</label>
+                <input type="number" min="0" class="form-control" placeholder="Ex: 010000000" name="StudentParentsPhone"
+                    id="StudentParentsPhone" required>
+            </div>
+            <div class="form-group" id="Whatsapp Phone">
+                <label>Whatsapp Phone</label>
+                <input type="number" min="0" class="form-control" placeholder="Ex: 010000000"
+                    name="StudentWhatsappPhone" id="StudentWhatsappPhone" required>
+            </div>
+            <div class="form-group">
+                <label>Grade</label>
+                <select class="custom-select" name="StudentGrade" id="StudentGrade" required>
+                    <option>Choose Student Grade</option>
+                    {{#each grade}}
+                    <option>{{this}}</option>
+                    {{/each}}
+
+                </select>
+            </div>
+            {{!-- <div class="form-group" id="School Name">
+                <label>School Name</label>
+                <input type="text" class="form-control" placeholder="Ex: El malek Fahd" name="StudentSchoolName" required>
+            </div> --}}
+            <div class="form-group" id="Registeration Amount">
+                <label>Paid Registeration</label>
+                <div class="input-group">
+                    <input type="number" min="0" class="form-control" placeholder="Ex: 120"
+                        name="StudentRegisterationAmount" required>
+                    <div class="input-group-append">
+                        <span class="input-group-text">L.E</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" id="Submit Button">
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+</div>
