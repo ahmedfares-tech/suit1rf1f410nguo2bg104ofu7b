@@ -1,5 +1,4 @@
-var bluebird = require('bluebird');
-var mongodb = bluebird.promisifyAll(require('mongoose'));
+var mongodb = require('mongoose')
 const CoursesCodes = mongodb.Schema({
     TeacherID: {
         type: Number,

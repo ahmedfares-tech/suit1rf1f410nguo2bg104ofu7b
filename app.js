@@ -5,8 +5,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var code = require("express-handlebars");
 var flash = require('connect-flash');
-var bluebird = require('bluebird');
-var mongodb = bluebird.promisifyAll(require('mongoose'));
+
+var mongodb = require('mongoose');
 const connection_url = process.env.MONGODB_URL || 'mongodb://localhost/Centers';
 const connection_port = process.env.PORT || 3000;
 var indexRouter = require("./routes/index");
@@ -49,8 +49,9 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
 //database connection
-mongodb.connectAsync(
-    connection_url,
+const uri = "mongodb+srv://DDDevilDDD:saeed123@center-jku2k.mongodb.net/Centers?retryWrites=true&w=majority";
+mongodb.connect(
+    uri,
     { useNewUrlParser: true, useUnifiedTopology: true },
     (error, result) => {
         if (error) {
@@ -61,6 +62,12 @@ mongodb.connectAsync(
     }
 );
 
+// const client = new mongodb(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// client.connect(err => {
+//     // const collection = client.db("test").collection("devices");
+//     // perform actions on the collection object
+//     client.close();
+// });
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     next(createError(404));
