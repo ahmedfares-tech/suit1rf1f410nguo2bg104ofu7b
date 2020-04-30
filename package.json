@@ -19,7 +19,7 @@
     "hbs": "^4.0.5",
     "http-errors": "~1.6.3",
     "http-msgs": "^1.0.9",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mdbootstrap": "^4.8.10",
     "mongoose": "^5.7.0",
     "morgan": "~1.9.1"
